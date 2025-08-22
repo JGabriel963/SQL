@@ -1,0 +1,5 @@
+SELECT * FROM pedidos AS p INNER JOIN clientes AS c ON p.cliente_id = c.id INNER JOIN produtos AS pr ON p.produto_id = pr.id INNER JOIN pagamentos AS pg ON p.id = pg.pedido_id;
+
+SELECT o.order_id, o.order_date, c.first_name || ' ' || c. last_name AS cliente, c.city, p.product_name, oi.quantity, oi.unit_price, (oi.quantity * oi.unit_price) AS subtotal FROM orders AS o INNER JOIN customers AS c ON o.customer_id = c.customer_id INNER JOIN order_items AS oi ON o.order_id = oi.order_id INNER JOIN products AS p ON oi.product_id = p.product_id WHERE o.status = 'DELIVERED';
+
+SELECT o.order_id, o.order_date, c.first_name || ' ' || c. last_name AS cliente, c.city, p.product_name, oi.quantity, oi.unit_price, (oi.quantity * oi.unit_price) AS subtotal FROM orders AS o INNER JOIN customers AS c ON o.customer_id = c.customer_id INNER JOIN order_items AS oi ON o.order_id = oi.order_id INNER JOIN products AS p ON oi.product_id = p.product_id WHERE o.order_date BETWEEN '2024-06-01' AND '2024-08-31' ORDER BY o.order_date DESC;

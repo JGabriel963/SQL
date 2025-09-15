@@ -1,3 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS 'uuid-ossp'; // Função para gerar uuid Ex.: uuid_generate_v4()
+
 CREATE TABLE categories (
   category_id SERIAL PRIMARY KEY,
   category_name VARCHAR(100) NOT NULL

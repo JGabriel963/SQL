@@ -14,3 +14,8 @@ ALTER TABLE products RENAME COLUMN title TO name;
 ALTER TABLE products RENAME TO items;
 
 DROP TABLE products;
+
+SET TIME ZONE 'America/Sao_Paulo';
+
+SHOW TIMEZONE;
+
